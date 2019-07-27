@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {Route, Link, Switch} from 'react-router-dom';
 import Header from './component/Header';
 import Menu from './component/Menu';
 import Order from './component/Order';
@@ -11,18 +10,21 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div>HOME PAGE</div>
+      <div>HOME PAGE</div>
+      <div>HOME PAGE</div>
+      <div>HOME PAGE</div>
+      <div>HOME PAGE</div>
+      <div>HOME PAGE</div>
+      <div>HOME PAGE</div>
+      <div>HOME PAGE</div>
+      <Switch>
+        <Route path={`/menu`} component={Menu} />
+        <Route path={`/location`} component={Location} />
+        <Route path={`/order`} component={Order} />
+      </Switch>
     </div>
   );
 }
-
-ReactDOM.render((
-  <Router>
-    <Route path="/" render={App} />
-    <Route path="/menu" render={Menu} />
-    <Route path="/location" render={Location} />
-    <Route path="/order" render={Order} />
-  </Router>),
-  document.getElementById('root')
-);
 
 export default App;

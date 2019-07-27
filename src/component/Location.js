@@ -1,9 +1,27 @@
 import React from 'react';
+import Header from './Header';
 
 const Location = (props) => {
   return (
-    <div id="location">
-      Location
+    <div>
+      <div id="location">
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+        LOCATION
+      </div>
     </div>
   )
 }

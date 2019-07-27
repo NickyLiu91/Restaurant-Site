@@ -11,9 +11,14 @@ body {
   /*background-color: red;*/
 }
 
-#header div {
+.header-part{
   border: solid white 2px;
   width: 33%;
   text-align: center;
   font-size: 30px;
+  /*color: green;*/
+}
+
+#menu {
+  background-color: red;
 }

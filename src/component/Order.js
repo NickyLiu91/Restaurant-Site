@@ -1,9 +1,27 @@
 import React from 'react';
+import Header from './Header';
 
 const Order = (props) => {
   return (
-    <div id="order">
-      Order
+    <div>
+      <div id="order">
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+        ORDER
+      </div>
     </div>
   )
 }
