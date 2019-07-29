@@ -4,10 +4,9 @@ const Food = (props) => {
   return(
     <div id="food">
       <img src={props.selectedItem.image} />
-      {console.log(props.selectedItem)}
-      <div>Name: {props.selectedItem.name}</div>
-      <div>Description: {props.selectedItem.description}</div>
-      <div>Price: ${props.selectedItem.price}.00</div>
+      <div>{props.selectedItem.name}</div>
+      <div>{props.selectedItem.description}</div>
+      <div>${props.selectedItem.price}.00</div>
     </div>
   )
 }

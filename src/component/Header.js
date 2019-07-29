@@ -2,7 +2,6 @@ import React from 'react';
 import {Route, Link} from 'react-router-dom';
 import Home from './Home';
 import Menu from '../container/Menu';
-import Order from './Order';
 import Location from './Location';
 
 const Header = (props) => {
@@ -16,9 +15,6 @@ const Header = (props) => {
       </div>
       <div className="header-part">
         <Link to={`/location`}>Location</Link>
-      </div>
-      <div className="header-part">
-        <Link to={`/order`}>Order</Link>
       </div>
     </div>
   )
