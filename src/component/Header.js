@@ -7,14 +7,19 @@ import Location from './Location';
 const Header = (props) => {
   return (
     <div id="header">
-      <div className="header-part">
-        <Link to={`/`}>Home</Link>
+      <div>
+        <h1 id="title">Teiban Ramen</h1>
       </div>
-      <div className="header-part">
-        <Link to={`/menu`}>Menu</Link>
-      </div>
-      <div className="header-part">
-        <Link to={`/location`}>Location</Link>
+      <div id="header2">
+        <div className="header-part">
+          <Link to={`/`}>Home</Link>
+        </div>
+        <div className="header-part">
+          <Link to={`/menu`}>Menu</Link>
+        </div>
+        <div className="header-part">
+          <Link to={`/location`}>Location</Link>
+        </div>
       </div>
     </div>
   )
