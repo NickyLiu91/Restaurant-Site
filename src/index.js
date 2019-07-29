@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './component/Header';
+import Home from './component/Home';
 import Menu from './component/Menu';
 import Order from './component/Order';
 import Location from './component/Location';
@@ -12,10 +13,6 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render((
   <Router>
     <Route path="/" component={App} />
-    <Route path={`/menu`} component={Menu} />
-    <Route path={`/location`} component={Location} />
-    <Route path={`/order`} component={Order} />
-
   </Router>),
   document.getElementById('root')
 );

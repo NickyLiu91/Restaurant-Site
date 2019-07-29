@@ -1,30 +1,24 @@
 import React from 'react';
 import {Route, Link, Switch} from 'react-router-dom';
 import Header from './component/Header';
+import Home from './component/Home';
 import Menu from './component/Menu';
 import Order from './component/Order';
 import Location from './component/Location';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+export default class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
       <Header />
-      <div>HOME PAGE</div>
-      <div>HOME PAGE</div>
-      <div>HOME PAGE</div>
-      <div>HOME PAGE</div>
-      <div>HOME PAGE</div>
-      <div>HOME PAGE</div>
-      <div>HOME PAGE</div>
-      <div>HOME PAGE</div>
       <Switch>
+        <Route exact path={`/`} component={Home} />
         <Route path={`/menu`} component={Menu} />
         <Route path={`/location`} component={Location} />
         <Route path={`/order`} component={Order} />
       </Switch>
-    </div>
-  );
+      </div>
+    )
+  }
 }
-
-export default App;
