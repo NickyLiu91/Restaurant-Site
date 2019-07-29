@@ -42,30 +42,35 @@ body {
 
 #sidebar {
   margin: 0;
-  background-color: blue;
+  /*background-color: blue;*/
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 100vh;
   width: 25vh;
+  border: solid gold 5px;
+  list-style: none;
+  padding-left: 0;
 }
 
 #section {
   font-size: 30px;
-  background-color: green;
+  border-bottom: solid gold 3px;
+  /*background-color: green;*/
 }
 
 #sub-section {
-  font-size: 30px;
-  background-color: black;
+  font-size: 15px;
+  color: pink;
+  /*background-color: silver;*/
 }
 
-#selected-item {
-  background-color: red;
+#food {
+  /*background-color: red;*/
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   height: 100vh;
-  width: 75vh;
+  width: 100%;
 }

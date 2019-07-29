@@ -9,7 +9,7 @@ const Section = (props) => {
     )
   } else {
     return (
-      <div id="sub-section" onClick={event => {props.selectSection(props.item.name)}}>
+      <div id="sub-section" onClick={event => {props.selectItem(props.item)}}>
         {props.item.name}
       </div>
     )

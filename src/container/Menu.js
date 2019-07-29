@@ -1,5 +1,6 @@
 import React from 'react';
 import Section from '../component/Section';
+import Food from '../component/Food';
 
 export default class Menu extends React.Component {
 
@@ -50,20 +51,21 @@ export default class Menu extends React.Component {
         {name: "Calpis", image: "images/Calpis", description: "", price: 4}
       ]}
     ],
+    selectedSection: "None",
     selectedItem: "None"
   }
 
   generateMenuSections = () => {
-    if (this.state.selectedItem == "None") {
+    if (this.state.selectedSection == "None") {
       return this.state.sections.map(
-        (item, index) => <Section key={index} item={item} selectSection={this.selectSection} selectedItem={this.state.selectedItem}/>
+        (item, index) => <Section key={index} item={item} selectSection={this.selectSection} selectedSection={this.state.selectedSection}/>
       )
     } else {
-      let relevantSection = [this.state.selectedItem]
-      let number = this.state.sections.findIndex(obj => obj.name == this.state.selectedItem)
+      let relevantSection = [this.state.selectedSection]
+      let number = this.state.sections.findIndex(obj => obj.name == this.state.selectedSection)
       this.state.sections.map(obj => {
         relevantSection.push(obj)
-        if (obj.name == this.state.selectedItem) {
+        if (obj.name == this.state.selectedSection) {
           this.state.sections[number].list.map(
             item => {
               item.className="sub-section"
@@ -74,15 +76,33 @@ export default class Menu extends React.Component {
       })
 
       return relevantSection.map(
-        (item, index) => <Section key={index} item={item} selectSection={this.selectSection} selectedItem={this.state.selectedItem}/>
+        (item, index) => <Section key={index} item={item} selectSection={this.selectSection} selectedSection={this.state.selectedSection} selectItem={this.selectItem}/>
       )
     }
   }
 
   selectSection = (event) => {
-    this.setState({
-      selectedItem: event
-    })
+    if (this.state.selectedSection == event) {
+      this.setState({
+        selectedSection: "None"
+      })
+    } else {
+      this.setState({
+        selectedSection: event
+      })
+    }
+  }
+
+  selectItem = (event) => {
+    if (this.state.selectedItem == event) {
+      this.setState({
+        selectedItem: "None"
+      })
+    } else {
+      this.setState({
+        selectedItem: event
+      })
+    }
   }
 
   render() {
@@ -102,12 +122,7 @@ export default class Menu extends React.Component {
           <ul id="sidebar">
             {this.generateMenuSections()}
           </ul>
-          <div id="selected-item">
-            <div>{this.state.selectedItem.image}</div>
-            <div>{this.state.selectedItem.name}</div>
-            <div>{this.state.selectedItem.description}</div>
-            <div>{this.state.selectedItem.price}</div>
-          </div>
+          <Food selectedItem={this.state.selectedItem}/>
         </div>
       )
     }
