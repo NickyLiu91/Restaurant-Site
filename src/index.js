@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './component/Header';
 import Home from './component/Home';
-import Menu from './component/Menu';
+import Menu from './container/Menu';
 import Order from './component/Order';
 import Location from './component/Location';
 import './index.css';

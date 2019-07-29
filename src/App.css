@@ -34,3 +34,32 @@ body {
   font-size: 30px;
   font-style: italic;
 }
+
+#menu {
+  display: flex;
+  width: 100%;
+}
+
+#sidebar {
+  margin: 0;
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100vh;
+  width: 25vh;
+}
+
+#section {
+  font-size: 30px;
+}
+
+#selected-item {
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 75vh;
+}

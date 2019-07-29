@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Link, Switch} from 'react-router-dom';
 import Header from './component/Header';
 import Home from './component/Home';
-import Menu from './component/Menu';
+import Menu from './container/Menu';
 import Order from './component/Order';
 import Location from './component/Location';
 import './App.css';

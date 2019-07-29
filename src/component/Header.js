@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
 import Home from './Home';
-import Menu from './Menu';
+import Menu from '../container/Menu';
 import Order from './Order';
 import Location from './Location';
 
