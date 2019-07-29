@@ -56,20 +56,25 @@ export default class Menu extends React.Component {
   generateMenuSections = () => {
     if (this.state.selectedItem == "None") {
       return this.state.sections.map(
-        (item, index) => <Section key={index} item={item.name} selectSection={this.selectSection}/>
+        (item, index) => <Section key={index} item={item} selectSection={this.selectSection} selectedItem={this.state.selectedItem}/>
       )
     } else {
       let relevantSection = [this.state.selectedItem]
       let number = this.state.sections.findIndex(obj => obj.name == this.state.selectedItem)
-      // console.log(this.state.selectedItem)
-      // console.log(number)
-      // console.log(this.state.sections[number])
-      this.state.sections[number].list.map(
-        item => relevantSection.push(item.name)
-      )
+      this.state.sections.map(obj => {
+        relevantSection.push(obj)
+        if (obj.name == this.state.selectedItem) {
+          this.state.sections[number].list.map(
+            item => {
+              item.className="sub-section"
+              relevantSection.push(item)
+            }
+          )
+        }
+      })
 
       return relevantSection.map(
-        (item, index) => <Section key={index} item={item} selectSection={this.selectSection}/>
+        (item, index) => <Section key={index} item={item} selectSection={this.selectSection} selectedItem={this.state.selectedItem}/>
       )
     }
   }
@@ -77,7 +82,7 @@ export default class Menu extends React.Component {
   selectSection = (event) => {
     this.setState({
       selectedItem: event
-    }, () => {console.log(this.state.selectedItem)})
+    })
   }
 
   render() {

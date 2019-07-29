@@ -52,6 +52,12 @@ body {
 
 #section {
   font-size: 30px;
+  background-color: green;
+}
+
+#sub-section {
+  font-size: 30px;
+  background-color: black;
 }
 
 #selected-item {
