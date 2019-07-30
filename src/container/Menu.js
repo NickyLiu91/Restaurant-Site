@@ -52,7 +52,35 @@ export default class Menu extends React.Component {
       ]}
     ],
     selectedSection: "None",
-    selectedItem: "None"
+    selectedItem: "None",
+    randomImage: '',
+    random: true
+  }
+
+  componentDidMount() {
+    this.randomImageGenerator()
+    this.changePicture()
+  }
+
+  randomImageGenerator = () => {
+    if (this.state.random == true) {
+      let allObjects = []
+      this.state.sections.forEach(object => {
+        object.list.forEach(object2 => {
+          allObjects.push(object2)
+        })
+      })
+
+      let randomNumber = Math.floor(Math.random() * allObjects.length)
+
+      this.setState({
+        randomImage: allObjects[randomNumber]
+      })
+    }
+  }
+
+  changePicture = () => {
+    setInterval(this.randomImageGenerator, 4000)
   }
 
   generateMenuSections = () => {
@@ -94,15 +122,10 @@ export default class Menu extends React.Component {
   }
 
   selectItem = (event) => {
-    if (this.state.selectedItem == event) {
-      this.setState({
-        selectedItem: "None"
-      })
-    } else {
-      this.setState({
-        selectedItem: event
-      })
-    }
+    this.setState({
+      selectedItem: event,
+      random: false
+    })
   }
 
   render() {
@@ -112,12 +135,7 @@ export default class Menu extends React.Component {
           <ul id="sidebar">
             {this.generateMenuSections()}
           </ul>
-          <div id="food">
-            <img src="" />
-            <div>Name</div>
-            <div>Description</div>
-            <div>Price</div>
-          </div>
+          <Food selectedItem={this.state.randomImage}/>
         </div>
       )
     } else {
