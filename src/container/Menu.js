@@ -112,7 +112,11 @@ export default class Menu extends React.Component {
           <ul id="sidebar">
             {this.generateMenuSections()}
           </ul>
-          <div id="selected-item">
+          <div id="food">
+            <img src="" />
+            <div>Name</div>
+            <div>Description</div>
+            <div>Price</div>
           </div>
         </div>
       )

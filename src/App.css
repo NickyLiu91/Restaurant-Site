@@ -10,6 +10,11 @@ img {
   border: solid gold 3px;
 }
 
+a, a:visited, a:hover, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
 #header {
   /*background-color: blue;*/
 }
@@ -59,7 +64,7 @@ img {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /*justify-content: space-around;*/
   height: 100vh;
   width: 25vh;
   border: solid gold 5px;
@@ -70,11 +75,23 @@ img {
 #section {
   font-size: 30px;
   border-bottom: solid gold 3px;
+  padding: 10px;
+}
+
+#section:hover {
+  background-color: silver;
+  color: black;
 }
 
 #sub-section {
-  font-size: 15px;
+  font-size: 20px;
   color: pink;
+  padding: 10px;
+}
+
+#sub-section:hover {
+  background-color: pink;
+  color: black;
 }
 
 #food {
